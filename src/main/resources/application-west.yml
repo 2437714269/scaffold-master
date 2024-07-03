@@ -1,0 +1,41 @@
+#西区
+# 服务端口
+server:
+  port: 8801
+
+#MySQL数据库地址
+database-addr:
+  37.30.14.74
+
+#西区es配置：ip、端口号、索引、用户名、密码
+west-es:
+  ip:
+    37.30.14.75
+  es-port:
+    9200
+  es-person:
+    capture_person_v2
+  es-car:
+    capture_car_v2
+  user-name:
+    elastic
+  password:
+    0ce9ce2e
+
+spring:
+  #数据库
+  datasource:
+    url: jdbc:mysql://${database-addr}:3306/perception-gather-platform-v2?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: Hello@Suizhi@2019
+
+# mybatis
+mybatis:
+  # 指定mapper文件地址
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  # 指定实体类地址
+  type-aliases-package: com.acer.model
+  # 数据库列转驼峰
+  configuration:
+    map-underscore-to-camel-case: true
+
